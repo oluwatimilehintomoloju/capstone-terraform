@@ -9,7 +9,7 @@ variable "cluster_name" {
   default = "capstone-eks-cluster"
 }
 
-variable "node_group_sg_name" {
+variable "node_group_name" {
     type = string
     default = "capstone-eks-terraform"
 }
