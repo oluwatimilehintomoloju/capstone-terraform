@@ -13,3 +13,8 @@ variable "node_group_sg_name" {
     type = string
     default = "capstone-eks-terraform"
 }
+
+variable "iam_profile_name" {
+    type = string
+    default = "capstone-eks-worker-profile"
+}
