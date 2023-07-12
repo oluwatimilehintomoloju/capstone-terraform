@@ -18,3 +18,8 @@ variable "iam_profile_name" {
     type = string
     default = "capstone-eks-worker-profile"
 }
+
+variable "launch_conf_name" {
+  type = string 
+  default = "capstone-terraform-eks"
+}

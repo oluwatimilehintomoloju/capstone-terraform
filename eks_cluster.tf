@@ -13,7 +13,6 @@ resource "aws_eks_cluster" "eks_cluster" {
 
   depends_on = [
     aws_iam_role_policy_attachment.AmazonEKSClusterPolicy,
-    // Todo - Update after Timilehin has added AmazonEKSServicePolicy
-    //aws_iam_role_policy_attachment.eks_service_policy_attachment,
+    aws_iam_role_policy_attachment.AmazonEKSServicePolicy,
   ]
 }
