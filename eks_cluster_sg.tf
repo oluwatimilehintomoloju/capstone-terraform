@@ -1,9 +1,8 @@
-
 resource "aws_security_group" "eks_cluster_sg" {
   name        = "${var.cluster_name}-sg"
   description = "Security group for EKS cluster"
 
- 
+
   // Ingress rule to allow inbound traffic from anywhere to the EKS control plane
   ingress {
     from_port   = 443
@@ -18,5 +17,5 @@ resource "aws_security_group" "eks_cluster_sg" {
     to_port     = 0
     protocol    = "-1"
     cidr_blocks = ["0.0.0.0/0"]
-}
+  }
 }
