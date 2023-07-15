@@ -1,7 +1,7 @@
 resource "aws_security_group" "eks_worker_sg" {
   name        = "${var.cluster_name}-node-sg"
   description = "Security group for the worker nodes in the cluster"
-  vpc_id      = "vpc-078588c826ff3e876"
+  vpc_id      = data.aws_vpc.bkss-capstone.id
 
   egress {
     from_port   = 0
