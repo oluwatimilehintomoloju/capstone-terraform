@@ -1,10 +1,16 @@
-resource "aws_autoscaling_group" "worker_sg" {
+resource "aws_autoscaling_group" "worker_asg" {
   name                 = "capstone-eks-terraform-asg"
   vpc_zone_identifier  = [data.aws_subnet.public_subnet.id]
   launch_configuration = aws_launch_configuration.worker_lc.id
   desired_capacity     = var.desired_capacity
   max_size             = var.max_size
   min_size             = var.min_size
+
+  tag {
+    key                 = "capstone-eks-terraform-asg"
+    value               = "kubernetes.io/cluster/${var.cluster_name}"
+    propagate_at_launch = true
+  }
 }
 
 resource "aws_launch_configuration" "worker_lc" {
