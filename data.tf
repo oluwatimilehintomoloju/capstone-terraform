@@ -8,9 +8,17 @@ data "aws_ami" "eks_worker" {
   owners      = ["602401143452"]
 }
 
+
+data "aws_vpc" "bkss-capstone" {
+  filter {
+    name = "tag:Name"
+    values = ["bkss-capstone"]
+  }
+}
+
 data "aws_subnet" "public_subnet" {
-  // TODO - Change this to data lookup of VPC ID
-  vpc_id            = "vpc-078588c826ff3e876"
+
+  vpc_id            = data.aws_vpc.bkss-capstone.id
   availability_zone = var.az
   filter {
     name   = "tag:Name"
@@ -23,3 +31,5 @@ data "http" "workstation_external_ip" {
 }
 
 data "aws_region" "current" {}
+
+

@@ -1,8 +1,8 @@
 resource "aws_security_group" "eks_cluster_sg" {
   name        = "${var.cluster_name}-sg"
   description = "Security group for EKS cluster for Cluster communication with worker nodes"
-  // TODO - Change this to data lookup of VPC id
-  vpc_id      = "vpc-078588c826ff3e876"
+
+  vpc_id      = data.aws_vpc.bkss-capstone.id
 
   egress {
     from_port   = 0
