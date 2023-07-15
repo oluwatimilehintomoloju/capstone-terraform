@@ -12,7 +12,7 @@ resource "aws_launch_configuration" "worker_lc" {
   image_id                    = data.aws_ami.eks_worker.id
   instance_type               = var.instance_type
   name_prefix                 = var.organisation
-  security_groups             = [aws_security_group.node_group_sg.id]
+  security_groups             = [aws_security_group.eks_worker_sg.id]
   user_data_base64            = base64decode(local.demo-node-userdata)
   iam_instance_profile        = aws_iam_instance_profile.eks_profile.name
 
