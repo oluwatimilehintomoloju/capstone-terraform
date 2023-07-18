@@ -44,7 +44,7 @@ kubectl run cmgt-ui --<AWS_ACT_ID>.dkr.ecr.<REGION>.amazonaws.com/cmgt-ui:latest
 
 ## Deploy capstone backend app
 ```
-kubectl run cmgt-backend --<AWS_ACT_ID>.dkr.ecr.<REGION>.amazonaws.com/cmgt-backend:latest --PORT 3000
+kubectl run cmgt-backend --<AWS_ACT_ID>.dkr.ecr.<REGION>.amazonaws.com/cmgt-backend:latest --PORT 8080
 ```
 
 ## Confirm successful deployment
