@@ -37,7 +37,7 @@ kubectl get nodes --watch
 kubectl get nodes
 ```
 
-## Deploy capstone fronted app
+## Deploy capstone frontend app
 ```
 kubectl run cmgt-ui --<AWS_ACT_ID>.dkr.ecr.<REGION>.amazonaws.com/cmgt-ui:latest --PORT 3000
 ```
